@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nor Cal Inspections</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // When a user lands on a deep link (e.g. /projects/ucsf-helen-diller) or
+      // refreshes a page, GitHub Pages returns this 404. We capture the intended
+      // path and redirect to index.html, where a small script in index.html
+      // restores it so React Router can handle the route normally.
+      var path = window.location.pathname + window.location.search + window.location.hash;
+      sessionStorage.setItem("spa-redirect", path);
+      window.location.replace("/");
+    </script>
+  </head>
+  <body></body>
+</html>

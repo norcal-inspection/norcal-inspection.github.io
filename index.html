@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Nor Cal Inspections — Inspector of Record & Project Management</title>
+    <meta
+      name="description"
+      content="Northern California Inspector of Record and Project Management Services for healthcare, civic, and education construction."
+    />
+  </head>
+  <body>
+    <script>
+      // Restore SPA redirect from 404.html (see public/404.html)
+      (function () {
+        var redirect = sessionStorage.getItem("spa-redirect");
+        if (redirect && redirect !== "/") {
+          sessionStorage.removeItem("spa-redirect");
+          history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
