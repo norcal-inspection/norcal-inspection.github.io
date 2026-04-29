@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "@/assets/nor-cal-logo.jpg";
 
 export default function Header() {
