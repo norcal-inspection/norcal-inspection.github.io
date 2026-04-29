@@ -310,7 +310,7 @@ export default function Home() {
         </div>
         <div className="clients-grid">
          {CLIENTS.map((c) => (
-  
+  <a
     key={c.name}
     href={c.url}
     target="_blank"
