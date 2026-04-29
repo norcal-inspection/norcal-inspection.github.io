@@ -136,22 +136,26 @@ export default function Home() {
   useEffect(() => {
     const el = aboutImgRef.current;
     if (!el) return;
-    const section = el.closest("section") as HTMLElement;
 
     const onScroll = () => {
+      const section = el.closest("section") as HTMLElement;
       if (!section) return;
       const rect = section.getBoundingClientRect();
       const winH = window.innerHeight;
-      // progress goes 0 (section bottom at viewport bottom) → 1 (section top at viewport top)
-      const progress = 1 - (rect.bottom / (winH + rect.height));
-      // shift range: -80px (image slides up as you scroll down)
-      const shift = progress * 120 - 40;
+      // How far the section has travelled through the viewport (0 = just entered, 1 = just left)
+      const progress = 1 - rect.bottom / (winH + rect.height);
+      const shift = progress * 100 - 30;
       el.style.transform = `translateY(${shift}px)`;
     };
 
+    // Listen on both window and document to catch all scroll contexts
     window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (

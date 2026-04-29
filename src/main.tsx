@@ -15,16 +15,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/connect" element={<Connect />} />
-          <Route path="/projects/ucsf-helen-diller" element={<HelenDillerProject />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/clients" element={<Clients />} />
+        <Route path="/connect" element={<Connect />} />
+        <Route path="/projects/ucsf-helen-diller" element={<HelenDillerProject />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   </React.StrictMode>

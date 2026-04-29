@@ -45,16 +45,9 @@ body {
 }
 
 /* ── Site layout shell ───────────────────────────────────────────────────── */
-/* The header is fixed, so the page content needs top padding equal to header height */
-#root > .page-shell {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  padding-top: 68px; /* matches header height so content isn't hidden under it */
-  flex: 1;
+/* The header is fixed 68px tall — non-hero pages need this so content isn't hidden under it */
+.page-content {
+  padding-top: 68px;
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
