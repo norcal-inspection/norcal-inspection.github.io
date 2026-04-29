@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import logo from "@/assets/nor-cal-logo.jpg";
 
 const NAV = [
   { label: "About", path: "/about" },
@@ -12,15 +13,11 @@ const Header = () => {
     <header className="border-b border-border/60 bg-background/80 backdrop-blur sticky top-0 z-40">
       <div className="container flex items-center justify-between py-6">
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border-[3px] border-brand">
-            <span className="font-serif text-xl font-bold text-brand">N</span>
-          </div>
-          <div className="leading-tight">
-            <div className="font-serif text-xl font-bold tracking-wide text-brand">NOR CAL</div>
-            <div className="text-[10px] font-semibold tracking-[0.25em] text-brand/80">
-              INSPECTIONS
-            </div>
-          </div>
+          <img
+  src={logo}
+  alt="Nor Cal Inspections"
+  className="h-12 w-auto"
+/>
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {NAV.map((item) => (
