@@ -1,5 +1,13 @@
 import { useEffect, useRef } from "react";
 import heroVideo from "@/assets/aerial-crane.mp4";
+import sutterLogo from "@/assets/sutter-health.png";
+import johnmuirLogo from "@/assets/john-muir-health.png";
+import kaiserLogo from "@/assets/kaiser-permanente.png";
+import lpackardLogo from "@/assets/lucile-packard-children-hospital.png";
+import stanfordLogo from "@/assets/stanford-medicine.png";
+import ucdavisLogo from "@/assets/uc-davis.jpeg";
+import uchastingsLogo from "@/assets/uc-hastings-law.png";
+import ucsfLogo from "@/assets/ucsf-health.png";
 
 // ─── Project data ────────────────────────────────────────────────────────────
 // Replace placeholder Unsplash URLs with real imported images as you add them.
@@ -74,15 +82,15 @@ const PROJECTS = [
 // Replace each `name` entry with an <img> once you have logo files.
 // Pattern: import sutterLogo from "@/assets/sutter-health-logo.png"
 //          then set logo: sutterLogo in the object below.
-const CLIENTS: { name: string; logo?: string }[] = [
-  { name: "Sutter Health" },
-  { name: "John Muir Health" },
-  { name: "Kaiser Permanente" },
-  { name: "Lucile Packard Children's Hospital Stanford" },
-  { name: "Stanford Medicine" },
-  { name: "UC Davis" },
-  { name: "UC Hastings Law" },
-  { name: "UCSF Health" },
+const CLIENTS: { name: string; logo?: string; url?: string }[] = [
+  { name: "Sutter Health", logo: sutterLogo, url: "https://www.sutterhealth.org" },
+  { name: "John Muir Health", logo: johnmuirLogo, url: "https://www.johnmuirhealth.com" },
+  { name: "Kaiser Permanente", logo: kaiserLogo, url: "https://www.kaiserpermanente.org" },
+  { name: "Lucile Packard Children's Hospital Stanford", logo: lpackardLogo, url: "https://www.stanfordchildrens.org" },
+  { name: "Stanford Medicine", logo: stanfordLogo, url: "https://med.stanford.edu" },
+  { name: "UC Davis", logo: ucdavisLogo, url: "https://www.ucdavis.edu" },
+  { name: "UC Hastings Law", logo: uchastingsLogo, url: "https://www.uchastings.edu" },
+  { name: "UCSF Health", logo: ucsfLogo, url: "https://www.ucsfhealth.org" },
 ];
 
 // ─── SVG icons ───────────────────────────────────────────────────────────────
@@ -301,15 +309,21 @@ export default function Home() {
           </h2>
         </div>
         <div className="clients-grid">
-          {CLIENTS.map((c) => (
-            <div key={c.name} className="client-cell">
-              {c.logo ? (
-                <img src={c.logo} alt={c.name} />
-              ) : (
-                <div className="client-placeholder">{c.name}</div>
-              )}
-            </div>
-          ))}
+         {CLIENTS.map((c) => (
+  
+    key={c.name}
+    href={c.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="client-cell"
+  >
+    {c.logo ? (
+      <img src={c.logo} alt={c.name} />
+    ) : (
+      <div className="client-placeholder">{c.name}</div>
+    )}
+  </a>
+))}
         </div>
       </section>
 
