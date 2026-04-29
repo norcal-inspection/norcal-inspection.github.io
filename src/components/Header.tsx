@@ -1,42 +1,26 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/nor-cal-logo.jpg";
 
-const NAV = [
-  { label: "About", path: "/about" },
-  { label: "Services", path: "/services" },
-  { label: "Clients", path: "/clients" },
-  { label: "Connect", path: "/connect" },
-];
+export default function Header() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
-const Header = () => {
+  // If we're on the homepage, use anchor links (#services etc.)
+  // If on a sub-page, go back to home and then the section (/#services)
+  const sectionHref = (anchor: string) =>
+    isHome ? `#${anchor}` : `/#${anchor}`;
+
   return (
-    <header className="border-b border-border/60 bg-background/80 backdrop-blur sticky top-0 z-40">
-      <div className="container flex items-center justify-between py-6">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-  src={logo}
-  alt="Nor Cal Inspections"
-  className="h-12 w-auto"
-/>
-        </Link>
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV.map((item) => (
-            <NavLink
-              key={item.label}
-              to={item.path}
-              className={({ isActive }) =>
-                `text-sm font-semibold tracking-wider uppercase transition-colors ${
-                  isActive ? "text-brand" : "text-foreground/70 hover:text-brand"
-                }`
-              }
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-      </div>
+    <header className="site-header">
+      <a href={isHome ? "#hero" : "/"} className="header-logo">
+        <img src={logo} alt="Nor Cal Inspections" />
+      </a>
+      <nav className="header-nav">
+        <a href={sectionHref("services")}>Services</a>
+        <a href={sectionHref("about")}>About</a>
+        <a href={sectionHref("projects")}>Projects</a>
+        <a href={sectionHref("contact")} className="nav-cta">Contact</a>
+      </nav>
     </header>
   );
-};
-
-export default Header;
+}

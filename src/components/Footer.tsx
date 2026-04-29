@@ -1,24 +1,20 @@
-import { Link } from "react-router-dom";
+import logo from "@/assets/nor-cal-logo.jpg";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="border-t border-border/60 py-8 mt-16">
-      <div className="container flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
-        <div>© {new Date().getFullYear()} Nor Cal Inspections. All rights reserved.</div>
-        <div className="flex gap-6">
-          <Link to="/connect" className="hover:text-brand">
-            Contact
-          </Link>
-          <Link to="/services" className="hover:text-brand">
-            Services
-          </Link>
-          <Link to="/about" className="hover:text-brand">
-            About
-          </Link>
-        </div>
+    <footer className="site-footer">
+      <a href="/" className="footer-logo">
+        <img src={logo} alt="Nor Cal Inspections" />
+      </a>
+      <div className="footer-copy">
+        © {new Date().getFullYear()} Nor Cal Inspection LLC. All rights reserved.
+      </div>
+      <div className="footer-links">
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#contact">Contact</a>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
