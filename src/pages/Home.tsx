@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import constructionImg1 from "@/assets/aerial-crane.mp4";
+import constructionImg1 from "@/assets/ucsf-helen-diller-elevation.avif";
 
 // ─── Project data ────────────────────────────────────────────────────────────
 // Replace placeholder Unsplash URLs with real imported images as you add them.
@@ -180,7 +180,7 @@ export default function Home() {
               3. Replace the <img> below with:
                  <img src={heroGif} alt="" />
           */}
-          <video src={heroVideo} autoPlay muted loop playsInline />
+          <img src={constructionImg1} alt="" />
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
