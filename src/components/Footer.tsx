@@ -1,4 +1,4 @@
-import logo from "@/assets/nor-cal-logo.jpg";
+import logo from "@/assets/nor-cal-logo-dark.png";
 
 export default function Footer() {
   return (
