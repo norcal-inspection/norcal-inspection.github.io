@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import constructionImg1 from "@/assets/ucsf-helen-diller-elevation.avif";
+import constructionImg2 from "@/assets/ucsf-helen-diller-entrance.avif";
+import constructionImg3 from "@/assets/ucsf-helen-diller-street-view.avif";
 
 // ─── Project data ────────────────────────────────────────────────────────────
 // Replace placeholder Unsplash URLs with real imported images as you add them.
@@ -141,8 +143,11 @@ export default function Home() {
     const onScroll = () => {
       if (!section) return;
       const rect = section.getBoundingClientRect();
-      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-      const shift = (progress - 0.5) * 60;
+      const winH = window.innerHeight;
+      // progress goes 0 (section bottom at viewport bottom) → 1 (section top at viewport top)
+      const progress = 1 - (rect.bottom / (winH + rect.height));
+      // shift range: -80px (image slides up as you scroll down)
+      const shift = progress * 120 - 40;
       el.style.transform = `translateY(${shift}px)`;
     };
 
