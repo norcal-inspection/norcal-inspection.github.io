@@ -21,42 +21,47 @@ import bayAreaMetroImg from "@/assets/bay-area-metro-center.jpg";
 const PROJECTS = [
   {
     title: "UCSF Helen Diller Hospital",
-    image: helendillerImg,
+    img: helendillerImg,
     alt: "UCSF Helen Diller Hospital elevation",
+    tag: "Healthcare",
     href: "/projects/ucsf-helen-diller",
   },
   {
     title: "Chinese Hospital",
-    image: chineseHospitalImg,
+    img: chineseHospitalImg,
     alt: "Chinese Hospital",
+    tag: "Healthcare",
     href: "/projects/chinese-hospital",
   },
   {
     title: "UCSF Tidelands",
-    image: tidelandsImg,
+    img: tidelandsImg,
     alt: "UCSF Tidelands",
+    tag: "Healthcare",
     href: "/projects/ucsf-tidelands",
   },
   {
     title: "Chabot College",
-    image: chabotImg,
+    img: chabotImg,
     alt: "Chabot College",
+    tag: "Education",
     href: "/projects/chabot-college",
   },
   {
     title: "Richmond Transit Village",
-    image: richmondImg,
+    img: richmondImg,
     alt: "Richmond Transit Village",
+    tag: "Civic",
     href: "/projects/richmond-transit-village",
   },
   {
     title: "Bay Area Metro Center",
-    image: bayAreaMetroImg,
+    img: bayAreaMetroImg,
     alt: "Bay Area Metro Center",
+    tag: "Civic",
     href: "/projects/bay-area-metro-center",
   },
 ];
-
 // ─── Client data ─────────────────────────────────────────────────────────────
 // Replace each `name` entry with an <img> once you have logo files.
 // Pattern: import sutterLogo from "@/assets/sutter-health-logo.png"
