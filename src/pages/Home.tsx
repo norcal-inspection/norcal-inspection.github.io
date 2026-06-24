@@ -8,73 +8,52 @@ import stanfordLogo from "@/assets/stanford-medicine.png";
 import ucdavisLogo from "@/assets/uc-davis.jpeg";
 import uchastingsLogo from "@/assets/uc-hastings-law.png";
 import ucsfLogo from "@/assets/ucsf-health.png";
+import helendillerImg from "@/assets/ucsf-helen-diller-elevation.avif";
+import chineseHospitalImg from "@/assets/chinese-hospital-website.jpg";
+import tidelandsImg from "@/assets/ucsf-tidelands.jpg";
+import chabotImg from "@/assets/chabot-college.jpg";
+import richmondImg from "@/assets/richmond-transit-village.jpg";
+import bayAreaMetroImg from "@/assets/bay-area-metro-center.jpg";
 
 // ─── Project data ────────────────────────────────────────────────────────────
 // Replace placeholder Unsplash URLs with real imported images as you add them.
 // Pattern: import myImg from "@/assets/my-image.jpg" then use myImg below.
 const PROJECTS = [
   {
-    img: "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?w=600&q=70",
-    alt: "UCSF Helen Diller Hospital",
-    tag: "Healthcare · San Francisco",
     title: "UCSF Helen Diller Hospital",
+    image: helendillerImg,
+    alt: "UCSF Helen Diller Hospital elevation",
     href: "/projects/ucsf-helen-diller",
   },
   {
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=70",
-    alt: "Sutter Health Medical Center",
-    tag: "Healthcare · Sacramento",
-    title: "Sutter Health Medical Center",
-    href: "#",
+    title: "Chinese Hospital",
+    image: chineseHospitalImg,
+    alt: "Chinese Hospital",
+    href: "/projects/chinese-hospital",
   },
   {
-    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=70",
-    alt: "State Office Tower",
-    tag: "Commercial · Sacramento",
-    title: "State Office Tower",
-    href: "#",
+    title: "UCSF Tidelands",
+    image: tidelandsImg,
+    alt: "UCSF Tidelands",
+    href: "/projects/ucsf-tidelands",
   },
   {
-    img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=70",
-    alt: "Davis Joint Unified School District",
-    tag: "Education · Davis",
-    title: "Davis Joint Unified SD Campus",
-    href: "#",
+    title: "Chabot College",
+    image: chabotImg,
+    alt: "Chabot College",
+    href: "/projects/chabot-college",
   },
   {
-    img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=600&q=70",
-    alt: "Stanford Medicine Expansion",
-    tag: "Healthcare · Palo Alto",
-    title: "Stanford Medicine Expansion",
-    href: "#",
+    title: "Richmond Transit Village",
+    image: richmondImg,
+    alt: "Richmond Transit Village",
+    href: "/projects/richmond-transit-village",
   },
   {
-    img: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=70",
-    alt: "John Muir Health Facility",
-    tag: "Healthcare · Walnut Creek",
-    title: "John Muir Health Facility",
-    href: "#",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=70",
-    alt: "Kaiser Permanente Complex",
-    tag: "Healthcare · Oakland",
-    title: "Kaiser Permanente Complex",
-    href: "#",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=70",
-    alt: "UC Davis Health Pavilion",
-    tag: "Education · Davis",
-    title: "UC Davis Health Pavilion",
-    href: "#",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=70",
-    alt: "UC Hastings Law Campus",
-    tag: "Education · San Francisco",
-    title: "UC Hastings Law Campus",
-    href: "#",
+    title: "Bay Area Metro Center",
+    image: bayAreaMetroImg,
+    alt: "Bay Area Metro Center",
+    href: "/projects/bay-area-metro-center",
   },
 ];
 

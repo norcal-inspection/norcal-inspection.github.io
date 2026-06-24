@@ -6,7 +6,12 @@ import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Clients from "@/pages/Clients";
 import Connect from "@/pages/Connect";
-import HelenDillerProject from "@/pages/HelenDillerProject";
+import HelenDillerProject from "./pages/HelenDillerProject";
+import ChineseHospitalProject from "./pages/ChineseHospitalProject";
+import UCSFTidelandsProject from "./pages/UCSFTidelandsProject";
+import ChabotCollegeProject from "./pages/ChabotCollegeProject";
+import RichmondTransitVillageProject from "./pages/RichmondTransitVillageProject";
+import BayAreaMetroCenterProject from "./pages/BayAreaMetroCenterProject";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./index.css";
@@ -22,6 +27,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/clients" element={<Clients />} />
         <Route path="/connect" element={<Connect />} />
         <Route path="/projects/ucsf-helen-diller" element={<HelenDillerProject />} />
+<Route path="/projects/chinese-hospital" element={<ChineseHospitalProject />} />
+<Route path="/projects/ucsf-tidelands" element={<UCSFTidelandsProject />} />
+<Route path="/projects/chabot-college" element={<ChabotCollegeProject />} />
+<Route path="/projects/richmond-transit-village" element={<RichmondTransitVillageProject />} />
+<Route path="/projects/bay-area-metro-center" element={<BayAreaMetroCenterProject />} />
       </Routes>
       <Footer />
     </BrowserRouter>
