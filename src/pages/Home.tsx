@@ -176,7 +176,7 @@ export default function Home() {
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <span className="hero-eyebrow">Northern California Inspector of Record</span>
+          <span className="hero-eyebrow"></span>
           <h1 className="hero-title">Leaders in Construction Inspection Services</h1>
           <p className="hero-sub">
             Delivering compliant, reliable inspections for hospitals, schools, and healthcare
@@ -196,7 +196,7 @@ export default function Home() {
       {/* ── SERVICES ─────────────────────────────────────────────────────── */}
       <section id="services" className="home-services">
         <div className="section-label">What We Do</div>
-        <h2 className="section-title white">Inspection &amp; Project Management Services</h2>
+        <h2 className="section-title white">Inspection Services</h2>
         <p className="section-body muted">
           Upholding standards set by California HCAI and the State Fire Marshal — delivered by
           experienced professionals across every project phase.
@@ -206,23 +206,21 @@ export default function Home() {
             <div className="service-icon"><IconSchool /></div>
             <h3>School Construction Inspection</h3>
             <p>
-              Comprehensive inspection services for K–12 and higher education facilities, ensuring
-              compliance with DSA requirements and California safety standards.
+              Nor Cal Inspection LLC provides comprehensive construction inspection services for K-12 and higher education facilities, ensuring compliance with state regulations and safety standards. 
             </p>
           </div>
           <div className="service-card">
             <div className="service-icon"><IconHospital /></div>
             <h3>Hospital Construction Inspection</h3>
             <p>
-              Thorough inspections for hospital construction projects, prioritizing quality and
-              adherence to HCAI healthcare facility standards and OSHPD requirements.
+              Our term specializes in conducting thorough inspections for hospital construction projects, prioritizing quality and adherence to healthcare facility standards.
             </p>
           </div>
           <div className="service-card">
             <div className="service-icon"><IconHealth /></div>
             <h3>Health Care Facility Inspection</h3>
             <p>
-              Meticulous inspection services for health care facilities, focusing on structural
+              We offer meticulous inspection services for health care facilities, focusing on structural
               integrity, fire safety, and full regulatory compliance from groundbreak to certificate
               of occupancy.
             </p>
@@ -236,7 +234,7 @@ export default function Home() {
           <div className="section-label">About Us</div>
           <h2 className="section-title">Trusted Expertise Across Northern California</h2>
           <p className="section-body">
-            Nor Cal Inspection LLC is a dedicated provider of construction inspection services,
+            Nor Cal Inspection LLC is a trusted provider of construction inspection services,
             committed to ensuring the safety and quality of critical infrastructure projects. Our
             experienced team upholds the standards set by California HCAI and the State Fire
             Marshal, delivering reliable and professional inspections for schools, hospitals, and
