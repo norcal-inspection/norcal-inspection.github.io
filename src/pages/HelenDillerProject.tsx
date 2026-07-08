@@ -45,14 +45,7 @@ const HelenDillerProject = () => {
     <div className="hdp">
       <style>{css}</style>
       <main className="hdp-main" style={{ paddingTop: topPad }}>
-        {/* Breadcrumb */}
-        <nav className="hdp-crumb">
-          <Link to="/" className="hdp-crumb-link">Home</Link>
-          <span className="hdp-crumb-sep">/</span>
-          <span className="hdp-crumb-here">UCSF Helen Diller Hospital</span>
-        </nav>
-
-        {/* Title — now sits below the nav */}
+        {/* Title */}
         <div className="hdp-titleblock">
           <div className="hdp-eyebrow">UCSF Health · Parnassus Heights</div>
           <h1 className="hdp-title">UCSF Health Helen Diller Hospital</h1>
@@ -123,12 +116,6 @@ const HelenDillerProject = () => {
 const css = `
 .hdp { background: #ffffff; color: #2d2b26; min-height: 100vh; }
 .hdp-main { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; padding-bottom: 96px; }
-
-.hdp-crumb { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8f8c85; margin-bottom: 22px; }
-.hdp-crumb-link { color: #8f8c85; text-decoration: none; }
-.hdp-crumb-link:hover { color: #1a2744; }
-.hdp-crumb-sep { margin: 0 8px; }
-.hdp-crumb-here { color: #1a2744; }
 
 .hdp-titleblock { max-width: 760px; }
 .hdp-eyebrow { color: #c88f1e; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; }
