@@ -45,9 +45,9 @@ body {
 }
 
 /* ── Site layout shell ───────────────────────────────────────────────────── */
-/* The header is fixed 68px tall — non-hero pages need this so content isn't hidden under it */
+/* The header is fixed 76px tall — non-hero pages need this so content isn't hidden under it */
 .page-content {
-  padding-top: 68px;
+  padding-top: 76px;
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
@@ -63,7 +63,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
-  height: 68px;
+  height: 76px;
 }
 
 .header-logo {
@@ -74,7 +74,7 @@ body {
 }
 
 .header-logo img {
-  height: 56px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -271,7 +271,7 @@ body {
   overflow: hidden;
   background: var(--navy-dark);
   /* Hero is full-viewport so it should NOT be offset by the main padding-top */
-  margin-top: -68px;
+  margin-top: -76px;
 }
 
 .hero-media {
