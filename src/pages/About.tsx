@@ -1,10 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 const About = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
-      <Header />
+    <div className="page-content min-h-screen bg-background text-foreground flex flex-col">
       <main className="container mt-12 mb-16 flex-1">
         <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-[0.25em] text-brand uppercase">
@@ -19,7 +15,6 @@ const About = () => {
           </p>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
