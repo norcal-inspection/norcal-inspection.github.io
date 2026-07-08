@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import elevationImg from "@/assets/ucsf-helen-diller-elevation.avif";
 import entranceImg from "@/assets/ucsf-helen-diller-entrance.avif";
 import streetViewImg from "@/assets/ucsf-helen-diller-street-view.avif";
 
 // ─── Images ──────────────────────────────────────────────────────────────────
-// The first image is the large featured one; the rest fill the smaller slots.
+// First image is the large featured one; the rest fill the thumbnail row.
 // To add a slot: import the file above, then add a line here.
 const IMAGES = [
   { src: elevationImg,  alt: "UCSF Helen Diller Hospital — elevation view from Mount Sutro" },
@@ -22,78 +23,65 @@ const FACTS = [
   { label: "Renovation",       value: "~114,000 GSF" },
 ];
 
-const serif = { fontFamily: "'Cormorant Garamond', serif" } as const;
-
 const HelenDillerProject = () => {
+  // Measure the real header height so the title can never sit under it.
+  const [topPad, setTopPad] = useState(104);
+  useEffect(() => {
+    const measure = () => {
+      const h =
+        document.querySelector(".site-header") ||
+        document.querySelector("header");
+      const height = h ? (h as HTMLElement).offsetHeight : 68;
+      setTopPad(height + 40);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
   const [featured, ...rest] = IMAGES;
 
   return (
-    <div className="min-h-screen flex flex-col bg-white" style={{ color: "#2d2b26" }}>
-      {/* pt-28 pushes everything below the fixed top navigation bar */}
-      <main className="flex-1 w-full max-w-[1120px] mx-auto px-6 pt-28 pb-24">
-
+    <div className="hdp">
+      <style>{css}</style>
+      <main className="hdp-main" style={{ paddingTop: topPad }}>
         {/* Breadcrumb */}
-        <nav className="text-[11px] font-semibold tracking-[0.22em] uppercase mb-6"
-             style={{ color: "#9a9790" }}>
-          <Link to="/" className="hover:opacity-70" style={{ color: "#9a9790" }}>Home</Link>
-          <span className="mx-2">/</span>
-          <span style={{ color: "#1a2744" }}>UCSF Helen Diller Hospital</span>
+        <nav className="hdp-crumb">
+          <Link to="/" className="hdp-crumb-link">Home</Link>
+          <span className="hdp-crumb-sep">/</span>
+          <span className="hdp-crumb-here">UCSF Helen Diller Hospital</span>
         </nav>
 
-        {/* Title block — sits below the nav, no longer hidden under it */}
-        <header className="max-w-3xl">
-          <div className="text-xs font-bold tracking-[0.25em] uppercase"
-               style={{ color: "#d4a820" }}>
-            UCSF Health · Parnassus Heights
-          </div>
-          <h1 className="text-4xl md:text-6xl font-semibold leading-[1.05] mt-3"
-              style={{ ...serif, color: "#111b33" }}>
-            UCSF Health Helen Diller Hospital
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed" style={{ color: "#5c5a54" }}>
+        {/* Title — now sits below the nav */}
+        <div className="hdp-titleblock">
+          <div className="hdp-eyebrow">UCSF Health · Parnassus Heights</div>
+          <h1 className="hdp-title">UCSF Health Helen Diller Hospital</h1>
+          <p className="hdp-intro">
             A new 15-story acute care hospital on the Parnassus Heights campus, paired with
             renovation and seismic upgrades to existing UCSF facilities.
           </p>
-        </header>
+        </div>
 
-        {/* ── Image slots ── */}
-        <section className="mt-10">
-          {/* Featured image */}
-          <div className="rounded-md overflow-hidden"
-               style={{ border: "1px solid #eceae5" }}>
-            <img
-              src={featured.src}
-              alt={featured.alt}
-              className="w-full object-cover"
-              style={{ aspectRatio: "16 / 9" }}
-            />
+        {/* Gallery */}
+        <section className="hdp-gallery">
+          <div className="hdp-lead">
+            <img src={featured.src} alt={featured.alt} />
           </div>
-
-          {/* Remaining images in a responsive row of slots */}
           {rest.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div className="hdp-thumbs">
               {rest.map((img) => (
-                <div key={img.src} className="rounded-md overflow-hidden"
-                     style={{ border: "1px solid #eceae5" }}>
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full object-cover"
-                    style={{ aspectRatio: "4 / 3" }}
-                  />
+                <div className="hdp-cell" key={img.src}>
+                  <img src={img.src} alt={img.alt} />
                 </div>
               ))}
             </div>
           )}
         </section>
 
-        {/* ── Project information ── */}
-        <section className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Scope copy */}
-          <div className="lg:col-span-2 space-y-6 leading-relaxed" style={{ color: "#33322d" }}>
-            <h2 className="text-3xl font-semibold" style={{ ...serif, color: "#111b33" }}>
-              Project Scope
-            </h2>
+        {/* Details */}
+        <section className="hdp-body">
+          <div className="hdp-scope">
+            <h2 className="hdp-h2">Project Scope</h2>
             <p>
               The project centers on a new 15-story, approximately 900,000 gross square foot
               hospital building delivering roughly 336 patient beds, with expanded emergency
@@ -111,40 +99,70 @@ const HelenDillerProject = () => {
             </p>
           </div>
 
-          {/* Facts sidebar */}
-          <aside>
-            <div className="rounded-md p-6" style={{ background: "#f8f7f4", border: "1px solid #eceae5" }}>
-              <div className="text-xs font-bold tracking-[0.2em] uppercase mb-4"
-                   style={{ color: "#d4a820" }}>
-                Project Facts
-              </div>
-              <dl className="space-y-4">
+          <aside className="hdp-aside">
+            <div className="hdp-facts">
+              <div className="hdp-facts-title">Project Facts</div>
+              <dl className="hdp-facts-list">
                 {FACTS.map((f) => (
-                  <div key={f.label}>
-                    <dt className="text-[11px] font-semibold tracking-[0.15em] uppercase"
-                        style={{ color: "#9a9790" }}>
-                      {f.label}
-                    </dt>
-                    <dd className="text-base font-medium mt-1" style={{ color: "#1a2744" }}>
-                      {f.value}
-                    </dd>
+                  <div className="hdp-fact" key={f.label}>
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
-
-            <Link
-              to="/"
-              className="inline-block mt-6 text-sm font-semibold tracking-wide hover:opacity-70"
-              style={{ color: "#d4a820" }}
-            >
-              ← Back to all projects
-            </Link>
+            <Link to="/" className="hdp-back">← Back to all projects</Link>
           </aside>
         </section>
       </main>
     </div>
   );
 };
+
+// ─── Scoped styles (self-contained; nothing else in the site is affected) ─────
+const css = `
+.hdp { background: #ffffff; color: #2d2b26; min-height: 100vh; }
+.hdp-main { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; padding-bottom: 96px; }
+
+.hdp-crumb { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8f8c85; margin-bottom: 22px; }
+.hdp-crumb-link { color: #8f8c85; text-decoration: none; }
+.hdp-crumb-link:hover { color: #1a2744; }
+.hdp-crumb-sep { margin: 0 8px; }
+.hdp-crumb-here { color: #1a2744; }
+
+.hdp-titleblock { max-width: 760px; }
+.hdp-eyebrow { color: #c88f1e; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; }
+.hdp-title { font-family: 'Cormorant Garamond', serif; color: #111b33; font-weight: 600; line-height: 1.05; margin: 10px 0 0; font-size: clamp(34px, 5vw, 60px); }
+.hdp-intro { color: #6f6d67; font-size: 18px; line-height: 1.6; margin: 16px 0 0; max-width: 60ch; }
+
+.hdp-gallery { margin-top: 40px; }
+.hdp-lead { border-radius: 10px; overflow: hidden; border: 1px solid #e6e3dd; box-shadow: 0 12px 34px rgba(17,27,51,0.10); }
+.hdp-lead img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.6s ease; }
+.hdp-lead:hover img { transform: scale(1.03); }
+
+.hdp-thumbs { display: grid; gap: 16px; margin-top: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.hdp-cell { border-radius: 10px; overflow: hidden; border: 1px solid #e6e3dd; box-shadow: 0 8px 22px rgba(17,27,51,0.08); }
+.hdp-cell img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.6s ease; }
+.hdp-cell:hover img { transform: scale(1.04); }
+
+.hdp-body { display: grid; gap: 48px; margin-top: 64px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .hdp-body { grid-template-columns: 2fr 1fr; } }
+
+.hdp-scope { border-left: 3px solid #e0a437; padding-left: 28px; }
+.hdp-h2 { font-family: 'Cormorant Garamond', serif; color: #111b33; font-weight: 600; font-size: 30px; margin: 0 0 4px; }
+.hdp-scope p { margin: 18px 0 0; line-height: 1.75; color: #3a382f; font-size: 16.5px; max-width: 62ch; }
+
+.hdp-aside { align-self: start; }
+.hdp-facts { background: #f7f5f1; border: 1px solid #e6e3dd; border-radius: 10px; padding: 24px 26px; }
+.hdp-facts-title { color: #c88f1e; font-weight: 700; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
+.hdp-facts-list { margin: 0; }
+.hdp-fact { padding: 14px 0; border-bottom: 1px solid #eae7e0; }
+.hdp-fact:last-child { border-bottom: none; padding-bottom: 0; }
+.hdp-fact dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9790; }
+.hdp-fact dd { margin: 4px 0 0; font-size: 16px; font-weight: 500; color: #1a2744; }
+
+.hdp-back { display: inline-block; margin-top: 20px; color: #c88f1e; font-weight: 600; font-size: 14px; text-decoration: none; }
+.hdp-back:hover { opacity: 0.7; }
+`;
 
 export default HelenDillerProject;
