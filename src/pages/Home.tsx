@@ -213,7 +213,7 @@ export default function Home() {
             <div className="service-icon"><IconHospital /></div>
             <h3>Hospital Construction Inspection</h3>
             <p>
-              Our term specializes in conducting thorough inspections for hospital construction projects, prioritizing quality and adherence to healthcare facility standards.
+              Our team specializes in conducting thorough inspections for hospital construction projects, prioritizing quality and adherence to healthcare facility standards.
             </p>
           </div>
           <div className="service-card">
@@ -246,11 +246,11 @@ export default function Home() {
               <div className="about-stat-label">Years Experience</div>
             </div>
             <div>
-              <div className="about-stat-num">150<span>+</span></div>
+              <div className="about-stat-num">500<span>+</span></div>
               <div className="about-stat-label">Projects Completed</div>
             </div>
             <div>
-              <div className="about-stat-num">8<span>+</span></div>
+              <div className="about-stat-num">15<span>+</span></div>
               <div className="about-stat-label">Major Clients</div>
             </div>
           </div>
