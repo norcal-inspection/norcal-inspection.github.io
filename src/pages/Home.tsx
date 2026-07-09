@@ -198,8 +198,9 @@ export default function Home() {
         <div className="section-label">What We Do</div>
         <h2 className="section-title white">Inspection Services</h2>
         <p className="section-body muted">
-          Upholding standards set by California HCAI and the State Fire Marshal — delivered by
-          experienced professionals across every project phase.
+          From groundbreaking to final sign-off, we provide continuous, on-site inspection
+          verifying that each stage of your project meets California HCAI and State Fire Marshal
+          code and regulatory standards.
         </p>
         <div className="services-grid">
           <div className="service-card">
@@ -234,11 +235,12 @@ export default function Home() {
           <div className="section-label">About Us</div>
           <h2 className="section-title">Trusted Expertise Across Northern California</h2>
           <p className="section-body">
-            Nor Cal Inspection LLC is a trusted provider of construction inspection services,
-            committed to ensuring the safety and quality of critical infrastructure projects. Our
-            experienced team upholds the standards set by California HCAI and the State Fire
-            Marshal, delivering reliable and professional inspections for schools, hospitals, and
-            healthcare facilities.
+            Founded in 2005 in Clayton, California, Nor Cal Inspection LLC has grown into one of
+            Northern California's most trusted names in healthcare and public-facility inspection.
+            Today our team of more than 20 Class A Inspectors of Record has overseen hospitals,
+            surgical centers, and school campuses across the region. Built on a simple belief:
+            that rigorous, honest inspection protects the people who will one day walk through
+            these buildings. That's the standard behind every project we take on.
           </p>
           <div className="about-stats">
             <div>
