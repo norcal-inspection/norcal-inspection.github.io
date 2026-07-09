@@ -14,6 +14,7 @@ import tidelandsImg from "@/assets/ucsf-tidelands.jpg";
 import chabotImg from "@/assets/chabot-college.jpg";
 import richmondImg from "@/assets/richmond-transit-village.jpg";
 import bayAreaMetroImg from "@/assets/bay-area-metro-center.jpg";
+import aboutImg from "@/assets/iors.jpg";
 
 // ─── Project data ────────────────────────────────────────────────────────────
 // Replace placeholder Unsplash URLs with real imported images as you add them.
@@ -258,7 +259,11 @@ export default function Home() {
           </div>
         </div>
         <div className="about-image-col">
-          <div className="about-parallax-img" ref={aboutImgRef} />
+          <div
+            className="about-parallax-img"
+            ref={aboutImgRef}
+            style={{ backgroundImage: `url(${aboutImg})` }}
+          />
         </div>
       </section>
 
