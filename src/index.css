@@ -887,8 +887,8 @@ body {
   :root { --header-h: 68px; }
   .header-logo img { height: 56px; }
 
-  .home-hero { min-height: 560px; }
-  .hero-content { padding: 0 1.25rem; }
+  .home-hero { min-height: 560px; align-items: flex-start; }
+  .hero-content { padding: calc(var(--header-h) + 4rem) 1.25rem 0; }
 
   .services-grid,
   .projects-grid,
