@@ -10,7 +10,7 @@
 
 /* ── Theme tokens ────────────────────────────────────────────────────────── */
 :root {
-  --header-h:      76px;
+  --header-h:      92px;
   --navy:          #1a2744;
   --navy-dark:     #111b33;
   --navy-mid:      #243054;
@@ -300,7 +300,7 @@ body {
   background: var(--navy-dark);
   /* Hero sits under the fixed header, so pad the top back in to clear it */
   margin-top: calc(-1 * var(--header-h));
-  padding-top: calc(var(--header-h) + 4rem);
+  padding-top: calc(var(--header-h) + 7rem);
   padding-bottom: 4rem;
 }
 
@@ -820,7 +820,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  :root { --header-h: 68px; }
+  :root { --header-h: 80px; }
   .header-logo img { height: 56px; }
 
   .services-grid,
