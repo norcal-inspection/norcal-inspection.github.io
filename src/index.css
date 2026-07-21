@@ -300,8 +300,8 @@ body {
   background: var(--navy-dark);
   /* Hero sits under the fixed header, so pad the top back in to clear it */
   margin-top: calc(-1 * var(--header-h));
-  padding-top: calc(var(--header-h) + 3rem);
-  padding-bottom: 20px;
+  padding-top: calc(var(--header-h) + 4rem);
+  padding-bottom: 4rem;
 }
 
 .hero-media {
