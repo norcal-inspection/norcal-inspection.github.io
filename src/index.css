@@ -315,7 +315,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.65;
 }
 
 .hero-overlay {
@@ -323,9 +323,9 @@ body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(17, 27, 51, 0.3) 0%,
-    rgba(17, 27, 51, 0.55) 60%,
-    rgba(17, 27, 51, 0.85) 100%
+    rgba(17, 27, 51, 0.15) 0%,
+    rgba(17, 27, 51, 0.4) 60%,
+    rgba(17, 27, 51, 0.75) 100%
   );
 }
 
