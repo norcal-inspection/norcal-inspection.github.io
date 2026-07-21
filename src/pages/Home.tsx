@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import heroVideo from "@/assets/aerial-crane.mp4";
 import sutterLogo from "@/assets/sutter-health.png";
 import johnmuirLogo from "@/assets/john-muir-health.png";
@@ -123,34 +122,6 @@ const IconBriefcase = () => (
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const aboutImgRef = useRef<HTMLDivElement>(null);
-
-  // Parallax effect for About section image
-  useEffect(() => {
-    const el = aboutImgRef.current;
-    if (!el) return;
-
-    const onScroll = () => {
-      const section = el.closest("section") as HTMLElement;
-      if (!section) return;
-      const rect = section.getBoundingClientRect();
-      const winH = window.innerHeight;
-      // How far the section has travelled through the viewport (0 = just entered, 1 = just left)
-      const progress = 1 - rect.bottom / (winH + rect.height);
-      const shift = progress * 100 - 30;
-      el.style.transform = `translateY(${shift}px)`;
-    };
-
-    // Listen on both window and document to catch all scroll contexts
-    window.addEventListener("scroll", onScroll, { passive: true });
-    document.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      document.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
@@ -179,18 +150,6 @@ export default function Home() {
         <div className="hero-content">
           <span className="hero-eyebrow"></span>
           <h1 className="hero-title">Leaders in Construction Inspection Services</h1>
-          <p className="hero-sub">
-            Delivering compliant, reliable inspections for hospitals, schools, and healthcare
-            facilities across Northern California.
-          </p>
-          <div className="hero-actions">
-            <a href="#services" className="btn-primary">Our Services</a>
-            <a href="#contact" className="btn-outline">Get in Touch</a>
-          </div>
-        </div>
-        <div className="hero-scroll">
-          <div className="hero-scroll-line" />
-          Scroll
         </div>
       </section>
 
@@ -261,7 +220,6 @@ export default function Home() {
         <div className="about-image-col">
           <div
             className="about-parallax-img"
-            ref={aboutImgRef}
             style={{ backgroundImage: `url(${aboutImg})` }}
           />
         </div>
