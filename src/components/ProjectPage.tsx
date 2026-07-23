@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export type ProjectImage = { src: string; alt: string };
-export type ProjectFact = { label: string; value: string };
+export type ProjectFact = { label: string; value: string | string[] };
 
 export interface ProjectPageProps {
   eyebrow: string;
@@ -39,6 +39,9 @@ const ProjectPage = ({
   }, []);
 
   const [featured, ...rest] = images;
+  // Exactly two images: show them side by side as a pair, no separate lead image.
+  const isPair = images.length === 2;
+  const thumbImages = isPair ? images : rest;
 
   return (
     <div className="hdp">
@@ -48,17 +51,18 @@ const ProjectPage = ({
         <div className="hdp-titleblock">
           <div className="hdp-eyebrow">{eyebrow}</div>
           <h1 className="hdp-title">{title}</h1>
-          <p className="hdp-intro">{intro}</p>
         </div>
 
         {/* Gallery */}
         <section className="hdp-gallery">
-          <div className="hdp-lead">
-            <img src={featured.src} alt={featured.alt} />
-          </div>
-          {rest.length > 0 && (
+          {!isPair && (
+            <div className="hdp-lead">
+              <img src={featured.src} alt={featured.alt} />
+            </div>
+          )}
+          {thumbImages.length > 0 && (
             <div className="hdp-thumbs">
-              {rest.map((img) => (
+              {thumbImages.map((img) => (
                 <div className="hdp-cell" key={img.src}>
                   <img src={img.src} alt={img.alt} />
                 </div>
@@ -70,7 +74,7 @@ const ProjectPage = ({
         {/* Details */}
         <section className="hdp-body">
           <div className="hdp-scope">
-            <h2 className="hdp-h2">Project Scope</h2>
+            <h2 className="hdp-h2">{intro}</h2>
             {scope.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
@@ -83,7 +87,11 @@ const ProjectPage = ({
                 {facts.map((f) => (
                   <div className="hdp-fact" key={f.label}>
                     <dt>{f.label}</dt>
-                    <dd>{f.value}</dd>
+                    <dd>
+                      {Array.isArray(f.value)
+                        ? f.value.map((v, i) => <div key={i}>{v}</div>)
+                        : f.value}
+                    </dd>
                   </div>
                 ))}
               </dl>
@@ -104,17 +112,18 @@ const css = `
 .hdp-titleblock { max-width: 760px; }
 .hdp-eyebrow { color: #c88f1e; font-weight: 700; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; }
 .hdp-title { font-family: 'Cormorant Garamond', serif; color: #111b33; font-weight: 600; line-height: 1.05; margin: 10px 0 0; font-size: clamp(34px, 5vw, 60px); }
-.hdp-intro { color: #6f6d67; font-size: 18px; line-height: 1.6; margin: 16px 0 0; max-width: 60ch; }
 
-.hdp-gallery { margin-top: 40px; }
+.hdp-gallery { margin-top: 40px; max-width: 92%; margin-left: auto; margin-right: auto; }
 .hdp-lead { border-radius: 10px; overflow: hidden; border: 1px solid #e6e3dd; box-shadow: 0 12px 34px rgba(17,27,51,0.10); }
-.hdp-lead img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.6s ease; }
-.hdp-lead:hover img { transform: scale(1.03); }
+.hdp-lead img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 
-.hdp-thumbs { display: grid; gap: 16px; margin-top: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.hdp-thumbs { display: grid; gap: 16px; margin-top: 16px; grid-template-columns: repeat(2, 1fr); }
 .hdp-cell { border-radius: 10px; overflow: hidden; border: 1px solid #e6e3dd; box-shadow: 0 8px 22px rgba(17,27,51,0.08); }
-.hdp-cell img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.6s ease; }
-.hdp-cell:hover img { transform: scale(1.04); }
+.hdp-cell img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+@media (max-width: 640px) {
+  .hdp-thumbs { grid-template-columns: 1fr; }
+}
 
 .hdp-body { display: grid; gap: 48px; margin-top: 64px; grid-template-columns: 1fr; }
 @media (min-width: 900px) { .hdp-body { grid-template-columns: 2fr 1fr; } }
@@ -131,6 +140,7 @@ const css = `
 .hdp-fact:last-child { border-bottom: none; padding-bottom: 0; }
 .hdp-fact dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9a9790; }
 .hdp-fact dd { margin: 4px 0 0; font-size: 16px; font-weight: 500; color: #1a2744; }
+.hdp-fact dd div + div { margin-top: 4px; }
 
 .hdp-back { display: inline-block; margin-top: 20px; color: #c88f1e; font-weight: 600; font-size: 14px; text-decoration: none; }
 .hdp-back:hover { opacity: 0.7; }

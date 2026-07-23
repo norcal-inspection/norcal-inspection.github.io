@@ -19,12 +19,13 @@ const HelenDillerProject = () => (
       "Structural and infrastructure work includes a new 15-story exterior stair at Moffitt Hospital and a seismic upgrade enabling Moffitt to support acute care services beyond 2030.",
     ]}
     facts={[
-      { label: "Location", value: "Parnassus Heights, San Francisco" },
       { label: "Client", value: "UCSF Health" },
-      { label: "Tower", value: "15 stories" },
-      { label: "New Construction", value: "~900,000 GSF" },
-      { label: "Patient Beds", value: "~336" },
-      { label: "Renovation", value: "~114,000 GSF" },
+      { label: "Location", value: "San Francisco, CA" },
+      { label: "Square Feet", value: "900,000" },
+      { label: "Architect", value: "HDR Architecture, Herzog de Meuron World Ltd. (HdM)" },
+      { label: "Project Type", value: ["New Construction", "Renovation", "Seismic", "Public"] },
+      { label: "Project Scope", value: ["Preconstruction", "Ground up"] },
+      { label: "Market", value: ["Health + Science", "Education"] },
     ]}
   />
 );
