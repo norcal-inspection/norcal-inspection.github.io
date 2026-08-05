@@ -22,9 +22,9 @@ const UCSFTidelandsProject = () => (
       { label: "Location", value: "San Francisco, CA" },
       { label: "Square Feet", value: "390,000" },
       { label: "Architect", value: "Kieran Timberlake" },
-      { label: "Project Type", value: ["New Building", "Public"] },
+      { label: "Project Type", value: ["New Building", "Public", "Housing"] },
       { label: "Project Scope", value: ["Construction", "Move-in Ready"] },
-      { label: "Market", value: ["Civic", "Housing"] },
+      { label: "Market", value: "Civic" },
     ]}
   />
 );
