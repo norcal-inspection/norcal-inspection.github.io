@@ -6,12 +6,12 @@ import tidelandsInteriorImg from "@/assets/tidelands-interior.webp";
 const UCSFTidelandsProject = () => (
   <ProjectPage
     eyebrow="UCSF · San Francisco, CA"
-    title="UCSF Tidelands"
+    title="The Tidelands"
     intro="UC San Francisco The Tidelands student housing provides 595 affordable units, doubling the university's housing capacity in the area."
     images={[
-      { src: tidelandsImg, alt: "UCSF Tidelands" },
-      { src: tidelandsEntryImg, alt: "UCSF Tidelands — entry" },
-      { src: tidelandsInteriorImg, alt: "UCSF Tidelands — interior" },
+      { src: tidelandsImg, alt: "The Tidelands" },
+      { src: tidelandsEntryImg, alt: "The Tidelands — entry" },
+      { src: tidelandsInteriorImg, alt: "The Tidelands — interior" },
     ]}
     scope={[
       "Located in San Francisco's Dogpatch neighborhood, the Tidelands is UCSF's most sustainable housing community. The project provides 595 below-market-rate micro-apartments for over 700 medical students and trainees.",

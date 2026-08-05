@@ -34,9 +34,9 @@ const PROJECTS = [
     href: "/projects/chinese-hospital",
   },
   {
-    title: "UCSF Tidelands",
+    title: "The Tidelands",
     img: tidelandsImg,
-    alt: "UCSF Tidelands",
+    alt: "The Tidelands",
     tag: "Civic",
     href: "/projects/ucsf-tidelands",
   },
