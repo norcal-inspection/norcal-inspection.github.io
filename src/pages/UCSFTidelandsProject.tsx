@@ -7,15 +7,16 @@ const UCSFTidelandsProject = () => (
   <ProjectPage
     eyebrow="UCSF · San Francisco, CA"
     title="The Tidelands"
-    intro="UC San Francisco The Tidelands student housing provides 595 affordable units, doubling the university's housing capacity in the area."
+    intro="Located in San Francisco's Dogpatch neighborhood, The Tidelands doubles the university's housing capacity in the area, providing 595 affordable units."
     images={[
       { src: tidelandsImg, alt: "The Tidelands" },
       { src: tidelandsEntryImg, alt: "The Tidelands — entry" },
       { src: tidelandsInteriorImg, alt: "The Tidelands — interior" },
     ]}
     scope={[
-      "Located in San Francisco's Dogpatch neighborhood, the Tidelands is UCSF's most sustainable housing community. The project provides 595 below-market-rate micro-apartments for over 700 medical students and trainees.",
-      "A context-friendly response to San Francisco's urgent need for high-density, affordable housing, the project draws on its formerly industrial but rapidly evolving urban context to create a convivial, sustainable, humane, and functional home for fixed-income emerging medical professionals.",
+      "Sited on Minnesota Street just one block from the UCSF Medical Center at Mission Bay, The Tidelands rises across two five-story buildings on a formerly industrial stretch of San Francisco's Dogpatch neighborhood, a district known today for its warehouses-turned-galleries, breweries, and creative energy.",
+      "The two buildings total approximately 390,000 gross square feet and offer a mix of efficiency, studio, and two-bedroom units, all furnished and built for the compact, high-efficiency living favored by students balancing coursework, research, and clinical rotations. Shared courtyards, study lounges, and a ground-floor corner market extend the living space beyond each unit's walls.",
+      "The project features a prefabricated building envelope system, making it one of UCSF's most energy-efficient buildings to date: an all-electric structure with a facade engineered to maximize natural ventilation, reducing dependence on mechanical cooling even in San Francisco's variable coastal climate.",
     ]}
     facts={[
       { label: "Client", value: "UCSF" },

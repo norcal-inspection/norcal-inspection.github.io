@@ -188,8 +188,9 @@ export default function Home() {
           <p className="section-body">
             Founded in 2005 in Clayton, California, Nor Cal Inspection LLC has grown into one of
             Northern California's most trusted names in healthcare and public-facility inspection.
-            Today our team of more than 20 Class A Inspectors of Record has overseen hospitals,
-            surgical centers, and school campuses across the region. Built on a simple belief:
+            Today our team of more than 20 Class A Inspectors of Record has overseen the
+            construction of hundreds of hospitals, surgical centers, and school campuses across
+            the region. Built on a simple belief:
             that rigorous, honest inspection protects the people who will one day walk through
             these buildings. That's the standard behind every project we take on.
           </p>
