@@ -159,25 +159,23 @@ export default function Home() {
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon"><IconSchool /></div>
-            <h3>School Construction Inspection</h3>
+            <h3>K-12 & Community Colleges</h3>
             <p>
-              Nor Cal Inspection LLC provides comprehensive construction inspection services for K-12 and higher education facilities, ensuring compliance with state regulations and safety standards. 
+              Nor Cal Inspection LLC provides comprehensive inspection services for K-12 schools and community colleges, ensuring compliance with Division of the State Architect (DSA) regulations at every phase of construction.
             </p>
           </div>
           <div className="service-card">
             <div className="service-icon"><IconHospital /></div>
-            <h3>Hospital Construction Inspection</h3>
+            <h3>Hospital & Healthcare</h3>
             <p>
-              Our team specializes in conducting thorough inspections for hospital construction projects, prioritizing quality and adherence to healthcare facility standards.
+              Our team specializes in thorough, on-site inspections for hospital and healthcare construction projects, meeting HCAI (Health Care Access and Information) standards with uncompromising attention to patient and life safety.
             </p>
           </div>
           <div className="service-card">
             <div className="service-icon"><IconHealth /></div>
-            <h3>Health Care Facility Inspection</h3>
+            <h3>Civic & Institutional</h3>
             <p>
-              We offer meticulous inspection services for health care facilities, focusing on structural
-              integrity, fire safety, and full regulatory compliance from groundbreak to certificate
-              of occupancy.
+              We deliver inspection services for civic, institutional, and public agency projects — including university facilities and transit infrastructure — in accordance with Office of the State Fire Marshal (OSFM) requirements.
             </p>
           </div>
         </div>
