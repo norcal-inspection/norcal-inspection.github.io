@@ -37,7 +37,7 @@ const PROJECTS = [
     title: "UCSF Tidelands",
     img: tidelandsImg,
     alt: "UCSF Tidelands",
-    tag: "Healthcare",
+    tag: "Civic",
     href: "/projects/ucsf-tidelands",
   },
   {
