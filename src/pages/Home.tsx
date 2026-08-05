@@ -152,9 +152,8 @@ export default function Home() {
         <div className="section-label">What We Do</div>
         <h2 className="section-title white">Inspection Services</h2>
         <p className="section-body muted">
-          From groundbreaking to final sign-off, we provide continuous, on-site inspection
-          verifying that each stage of your project meets California HCAI and State Fire Marshal
-          code and regulatory standards.
+          From groundbreaking to final sign-off, we provide continuous, on-site inspection to
+          verify that every stage of your project meets state regulatory standards.
         </p>
         <div className="services-grid">
           <div className="service-card">
