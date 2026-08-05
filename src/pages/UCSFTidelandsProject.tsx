@@ -14,7 +14,7 @@ const UCSFTidelandsProject = () => (
       { src: tidelandsInteriorImg, alt: "UCSF Tidelands — interior" },
     ]}
     scope={[
-      "Located in San Francisco's Dogpatch neighborhood, The Tidelands is UCSF's most sustainable housing community. The project provides 595 below-market-rate micro-apartments for over 700 medical students and trainees.",
+      "Located in San Francisco's Dogpatch neighborhood, the Tidelands is UCSF's most sustainable housing community. The project provides 595 below-market-rate micro-apartments for over 700 medical students and trainees.",
       "A context-friendly response to San Francisco's urgent need for high-density, affordable housing, the project draws on its formerly industrial but rapidly evolving urban context to create a convivial, sustainable, humane, and functional home for fixed-income emerging medical professionals.",
     ]}
     facts={[
@@ -24,7 +24,7 @@ const UCSFTidelandsProject = () => (
       { label: "Architect", value: "Kieran Timberlake" },
       { label: "Project Type", value: ["New Building", "Public"] },
       { label: "Project Scope", value: ["Construction", "Move-in Ready"] },
-      { label: "Market", value: "Civic" },
+      { label: "Market", value: ["Civic", "Housing"] },
     ]}
   />
 );
