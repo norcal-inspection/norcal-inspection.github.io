@@ -10,7 +10,7 @@ import ucsfLogo from "@/assets/ucsf-health.png";
 import helendillerImg from "@/assets/ucsf-helen-diller-elevation.avif";
 import chineseHospitalImg from "@/assets/chinese-hospital-website.jpg";
 import tidelandsImg from "@/assets/ucsf-tidelands.jpg";
-import chabotImg from "@/assets/chabot-college.jpg";
+import ucLawImg from "@/assets/uc-law-exterior.jpg";
 import richmondImg from "@/assets/richmond-transit-village.jpg";
 import bayAreaMetroImg from "@/assets/bay-area-metro-center.jpg";
 import aboutImg from "@/assets/iors.jpg";
@@ -41,11 +41,11 @@ const PROJECTS = [
     href: "/projects/ucsf-tidelands",
   },
   {
-    title: "Chabot College",
-    img: chabotImg,
-    alt: "Chabot College",
-    tag: "Education",
-    href: "/projects/chabot-college",
+    title: "UC Law San Francisco",
+    img: ucLawImg,
+    alt: "UC Law San Francisco",
+    tag: "Civic",
+    href: "/projects/uc-law-san-francisco",
   },
   {
     title: "Richmond Transit Village",
