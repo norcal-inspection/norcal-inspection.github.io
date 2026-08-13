@@ -12,7 +12,7 @@ import chineseHospitalImg from "@/assets/chinese-hospital-website.jpg";
 import tidelandsImg from "@/assets/ucsf-tidelands.jpg";
 import ucLawImg from "@/assets/uc-law-exterior.jpg";
 import richmondImg from "@/assets/richmond-transit-village.jpg";
-import bayAreaMetroImg from "@/assets/bay-area-metro-center.jpg";
+import weillImg from "@/assets/weill-exterior.webp";
 import aboutImg from "@/assets/iors.jpg";
 
 // ─── Project data ────────────────────────────────────────────────────────────
@@ -55,11 +55,11 @@ const PROJECTS = [
     href: "/projects/richmond-transit-village",
   },
   {
-    title: "Bay Area Metro Center",
-    img: bayAreaMetroImg,
-    alt: "Bay Area Metro Center",
-    tag: "Civic",
-    href: "/projects/bay-area-metro-center",
+    title: "Weill Neurosciences Building",
+    img: weillImg,
+    alt: "Weill Neurosciences Building",
+    tag: "Healthcare",
+    href: "/projects/weill-neurosciences",
   },
 ];
 // ─── Client data ─────────────────────────────────────────────────────────────

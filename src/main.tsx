@@ -11,7 +11,7 @@ import ChineseHospitalProject from "./pages/ChineseHospitalProject";
 import UCSFTidelandsProject from "./pages/UCSFTidelandsProject";
 import UCLawSanFranciscoProject from "./pages/UCLawSanFranciscoProject";
 import RichmondTransitVillageProject from "./pages/RichmondTransitVillageProject";
-import BayAreaMetroCenterProject from "./pages/BayAreaMetroCenterProject";
+import WeillNeurosciencesProject from "./pages/WeillNeurosciencesProject";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./index.css";
@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 <Route path="/projects/ucsf-tidelands" element={<UCSFTidelandsProject />} />
 <Route path="/projects/uc-law-san-francisco" element={<UCLawSanFranciscoProject />} />
 <Route path="/projects/richmond-transit-village" element={<RichmondTransitVillageProject />} />
-<Route path="/projects/bay-area-metro-center" element={<BayAreaMetroCenterProject />} />
+<Route path="/projects/weill-neurosciences" element={<WeillNeurosciencesProject />} />
       </Routes>
       <Footer />
     </BrowserRouter>

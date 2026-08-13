@@ -19,7 +19,7 @@ const UCLawSanFranciscoProject = () => (
     facts={[
       { label: "Client", value: "UC Law San Francisco" },
       { label: "Location", value: "San Francisco, CA" },
-      { label: "Square Feet", value: "356,000" },
+      { label: "Square Feet", value: "365,000" },
       { label: "Architect", value: "Perkins + Will" },
       { label: "Project Type", value: ["New Construction", "Public"] },
       { label: "Project Scope", value: ["Ground up", "Occupancy"] },
