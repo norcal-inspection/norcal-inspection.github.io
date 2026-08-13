@@ -12,7 +12,7 @@ import chineseHospitalImg from "@/assets/chinese-hospital-website.jpg";
 import tidelandsImg from "@/assets/ucsf-tidelands.jpg";
 import ucLawImg from "@/assets/uc-law-exterior.jpg";
 import richmondImg from "@/assets/richmond-transit-village.jpg";
-import weillImg from "@/assets/weill-exterior.webp";
+import weillImg from "@/assets/weill-exterior-1.jpg";
 import aboutImg from "@/assets/iors.jpg";
 
 // ─── Project data ────────────────────────────────────────────────────────────
