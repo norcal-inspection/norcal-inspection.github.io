@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Seo from "@/components/Seo";
 
 export type ProjectImage = { src: string; alt: string };
 export type ProjectFact = { label: string; value: string | string[] };
@@ -43,8 +44,12 @@ const ProjectPage = ({
   const isPair = images.length === 2;
   const thumbImages = isPair ? images : rest;
 
+  const metaDescription =
+    intro.length > 160 ? `${intro.slice(0, 157).trimEnd()}…` : intro;
+
   return (
     <div className="hdp">
+      <Seo title={`${title} — Project`} description={metaDescription} />
       <style>{css}</style>
       <main className="hdp-main" style={{ paddingTop: topPad }}>
         {/* Title */}

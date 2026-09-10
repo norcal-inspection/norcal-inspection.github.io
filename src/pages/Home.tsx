@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import heroVideo from "@/assets/aerial-crane.mp4";
 import sutterLogo from "@/assets/sutter-health.png";
 import johnmuirLogo from "@/assets/john-muir-health.png";
@@ -118,6 +119,10 @@ const IconBriefcase = () => (
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Nor Cal Inspections"
+        description="Northern California Inspector of Record and construction project management for healthcare, civic, and education projects — DSA, HCAI, and OSFM compliance since 2005."
+      />
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section id="hero" className="home-hero">
         <div className="hero-media">

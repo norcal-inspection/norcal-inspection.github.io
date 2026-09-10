@@ -1,6 +1,13 @@
+import Seo from "@/components/Seo";
+
 const Services = () => {
   return (
     <div className="page-content min-h-screen bg-background text-foreground flex flex-col">
+      <Seo
+        title="Services"
+        description="Inspector of Record and construction project management services from Nor Cal Inspections — DSA, HCAI, and OSFM compliance across Northern California."
+        noindex
+      />
       <main className="container mt-12 mb-16 flex-1">
         <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-[0.25em] text-brand uppercase">

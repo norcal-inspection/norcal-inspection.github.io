@@ -1,6 +1,13 @@
+import Seo from "@/components/Seo";
+
 const Connect = () => {
   return (
     <div className="page-content min-h-screen bg-background text-foreground flex flex-col">
+      <Seo
+        title="Connect"
+        description="Contact Nor Cal Inspections for project inquiries, bid requests, and employment opportunities in Northern California construction inspection."
+        noindex
+      />
       <main className="container mt-12 mb-16 flex-1">
         <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-[0.25em] text-brand uppercase">

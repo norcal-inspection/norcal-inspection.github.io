@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
@@ -18,6 +19,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <HelmetProvider>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -35,5 +37,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       </Routes>
       <Footer />
     </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 );

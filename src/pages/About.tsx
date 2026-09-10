@@ -1,6 +1,13 @@
+import Seo from "@/components/Seo";
+
 const About = () => {
   return (
     <div className="page-content min-h-screen bg-background text-foreground flex flex-col">
+      <Seo
+        title="About"
+        description="Nor Cal Inspection LLC — Northern California's Inspector of Record for healthcare, civic, and education construction since 2005."
+        noindex
+      />
       <main className="container mt-12 mb-16 flex-1">
         <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-[0.25em] text-brand uppercase">

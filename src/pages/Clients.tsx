@@ -1,6 +1,13 @@
+import Seo from "@/components/Seo";
+
 const Clients = () => {
   return (
     <div className="page-content min-h-screen bg-background text-foreground flex flex-col">
+      <Seo
+        title="Clients"
+        description="Health systems, school districts, universities, and public agencies that partner with Nor Cal Inspections across Northern California."
+        noindex
+      />
       <main className="container mt-12 mb-16 flex-1">
         <div className="max-w-3xl">
           <div className="text-xs font-semibold tracking-[0.25em] text-brand uppercase">
