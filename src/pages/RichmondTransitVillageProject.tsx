@@ -1,7 +1,7 @@
 import ProjectPage from "@/components/ProjectPage";
 import richmondImg from "@/assets/richmond-transit-village.jpg";
-import amtrakImg from "@/assets/rts-amtrak.jpg";
 import interiorImg from "@/assets/rts-interior.jpg";
+import bartParkingImg from "@/assets/bart-parking.jpg";
 
 const RichmondTransitVillageProject = () => (
   <ProjectPage
@@ -10,8 +10,8 @@ const RichmondTransitVillageProject = () => (
     intro="Redevelopment of the BART/Amtrak station area from surface parking into a transit-oriented village, delivered in three distinct efforts: two station phases and a separate structured garage."
     images={[
       { src: richmondImg, alt: "Richmond Transit Village" },
-      { src: amtrakImg, alt: "Richmond Transit Village — Amtrak platform" },
       { src: interiorImg, alt: "Richmond Transit Village — station interior" },
+      { src: bartParkingImg, alt: "BART parking structure" },
     ]}
     scope={[
       "Phase I (13,600 SF) rebuilt the station's west side, including a new station building, entry canopy, upper and lower plaza paving, landscaping and irrigation, storm drainage, street improvements, lighting, and an elevator connecting the two plaza levels.",
