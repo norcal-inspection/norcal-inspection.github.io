@@ -120,7 +120,7 @@ const IconBriefcase = () => (
 // Web3Forms access key — links this form to norcalinspection@icloud.com.
 // Get it from https://web3forms.com (Create Access Key, enter that email, confirm).
 // Not a secret: it only permits sending mail to the pre-registered address.
-const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_ACCESS_KEY = "36a8cc4d-730e-4cd0-8c8a-8f22e9413e1c";
 
 type FormStatus = "idle" | "sending" | "ok" | "error";
 
