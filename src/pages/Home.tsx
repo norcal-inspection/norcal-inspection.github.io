@@ -1,3 +1,4 @@
+import { useState, type FormEvent } from "react";
 import Seo from "@/components/Seo";
 import heroVideo from "@/assets/aerial-crane.mp4";
 import sutterLogo from "@/assets/sutter-health.png";
@@ -116,7 +117,37 @@ const IconBriefcase = () => (
 
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Web3Forms access key — links this form to norcalinspection@icloud.com.
+// Get it from https://web3forms.com (Create Access Key, enter that email, confirm).
+// Not a secret: it only permits sending mail to the pre-registered address.
+const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+
+type FormStatus = "idle" | "sending" | "ok" | "error";
+
 export default function Home() {
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+
+  async function handleContactSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setFormStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (res.ok) {
+        setFormStatus("ok");
+        form.reset();
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
+  }
+
   return (
     <>
       <Seo
@@ -311,31 +342,59 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="contact-form-col">
+        <form className="contact-form-col" onSubmit={handleContactSubmit}>
+          <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+          <input type="hidden" name="subject" value="New inquiry from norcalinspection.com" />
+          <input type="hidden" name="from_name" value="NorCal Inspection website" />
+          {/* honeypot — bots fill this, humans never see it */}
+          <input
+            type="checkbox"
+            name="botcheck"
+            tabIndex={-1}
+            autoComplete="off"
+            style={{ display: "none" }}
+          />
           <div className="form-row">
             <div className="form-group">
-              <label>First Name</label>
-              <input type="text" placeholder="Jane" />
+              <label htmlFor="cf-first">First Name</label>
+              <input id="cf-first" type="text" name="First Name" placeholder="Jane" required />
             </div>
             <div className="form-group">
-              <label>Last Name</label>
-              <input type="text" placeholder="Smith" />
+              <label htmlFor="cf-last">Last Name</label>
+              <input id="cf-last" type="text" name="Last Name" placeholder="Smith" required />
             </div>
           </div>
           <div className="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="jane@hospital.org" />
+            <label htmlFor="cf-email">Email</label>
+            <input id="cf-email" type="email" name="email" placeholder="jane@hospital.org" required />
           </div>
           <div className="form-group">
-            <label>Organization</label>
-            <input type="text" placeholder="Institution or Firm" />
+            <label htmlFor="cf-org">Organization</label>
+            <input id="cf-org" type="text" name="Organization" placeholder="Institution or Firm" />
           </div>
           <div className="form-group">
-            <label>Message</label>
-            <textarea placeholder="Tell us about your project — location, scope, timeline..." />
+            <label htmlFor="cf-msg">Message</label>
+            <textarea
+              id="cf-msg"
+              name="message"
+              placeholder="Tell us about your project — location, scope, timeline..."
+              required
+            />
           </div>
-          <button className="form-submit">Send Message →</button>
-        </div>
+          <button type="submit" className="form-submit" disabled={formStatus === "sending"}>
+            {formStatus === "sending" ? "Sending…" : "Send Message →"}
+          </button>
+          {formStatus === "ok" && (
+            <p className="form-status ok" role="status">
+              Thanks — your message has been sent. We'll be in touch shortly.
+            </p>
+          )}
+          {formStatus === "error" && (
+            <p className="form-status error" role="status">
+              Something went wrong. Please email us directly at norcalinspection@icloud.com.
+            </p>
+          )}
+        </form>
       </section>
     </>
   );

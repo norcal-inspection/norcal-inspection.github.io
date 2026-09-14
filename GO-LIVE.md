@@ -87,6 +87,9 @@ value. Add that as a `TXT` record in GoDaddy, then click Verify.
   `<Seo>` and add them to `public/sitemap.xml` once they have real content.
 - Hero video `src/assets/aerial-crane.mp4` is ~46 MB — compress it; it's the largest
   performance drag on the homepage.
-- Contact form on the homepage still doesn't submit anywhere. Plan: sign up at
-  web3forms.com with `norcalinspection@icloud.com`, then wire the access key into a
-  real `<form>` in `src/pages/Home.tsx`.
+- Contact form on the homepage is now wired to Web3Forms (real `<form>` with
+  fetch submit + status messages in `src/pages/Home.tsx`, styles in `index.css`).
+  **Remaining:** create the access key at web3forms.com using
+  `norcalinspection@icloud.com`, then replace `WEB3FORMS_ACCESS_KEY` at the top of
+  `src/pages/Home.tsx` and push. Submissions email to that iCloud address; the
+  `email` field is set as reply-to. Honeypot spam field included.

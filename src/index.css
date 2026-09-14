@@ -753,6 +753,26 @@ body {
   transform: translateY(-1px);
 }
 
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form-status.ok {
+  color: var(--yellow);
+}
+
+.form-status.error {
+  color: #ff8a8a;
+}
+
 /* ════════════════════════════════════════════════════════════════════════════
    RESPONSIVE / MOBILE
    ════════════════════════════════════════════════════════════════════════════ */
